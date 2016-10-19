@@ -33,8 +33,10 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /code
 WORKDIR /code
 
-ADD Gemfile /myapp/Gemfile
+ADD Gemfile /code/Gemfile
 
-ADD Gemfile.lock /myapp/Gemfile.lock
+ADD Gemfile.lock /code/Gemfile.lock
 
 RUN bundle install
+
+ADD . /code
